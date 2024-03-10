@@ -1,0 +1,385 @@
+git
+
+git = version history for code like google docs. It allows us to save every version of our file and we can restore the past.
+version = commit
+1. To go to new folder
+eg. cd ~/Desktop/the folder you need
+2. to list the file we need
+eg. ls 
+3. git init - start tracking all changes in the current folder 
+
+ git config --global --add safe.directory 'D:/Evangadi Networks/BashPractice/BashTest'     
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest
+$ git config --global --add safe.directory 'D:/Evangadi Networks/BashPractice/BashTest'
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        practice.js
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git add .
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git satus
+git: 'satus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   practice.js
+
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git commit -m "Version 1"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Nati@LAPTOP-B89E68BP.(none)')
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git config --global user.email "studentethiopia21@gmail.com"
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git config --global user.name "Natnael.Y"
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git commit -m "Version 1"
+[master (root-commit) 11b13b0] Version 1
+ 1 file changed, 2 insertions(+)
+ create mode 100644 practice.js
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git log
+commit 11b13b0caf5ef4a5cd1ffece34b4286898d8db22 (HEAD -> master)
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 14:51:57 2024 +0300
+
+    Version 1
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git add .
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git commit -m "Version 2"
+[master d6af37b] Version 2
+ 1 file changed, 3 insertions(+)
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git add .
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git commit -m "Version 3"
+[master 4115af1] Version 3
+ 1 file changed, 1 insertion(+)
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git log
+commit 4115af1116022e3320f1d1f2b3d51ef270e34033 (HEAD -> master)
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 15:05:14 2024 +0300
+
+    Version 3
+
+commit d6af37b316d41930900d093d66f1de795c2ebe4e
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 15:03:58 2024 +0300
+
+    Version 2
+
+commit 11b13b0caf5ef4a5cd1ffece34b4286898d8db22
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 14:51:57 2024 +0300
+
+    Version 1
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git checkout d6af37b316d41930900d093d66f1de795c2ebe4e
+Note: switching to 'd6af37b316d41930900d093d66f1de795c2ebe4e'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at d6af37b Version 2
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest ((d6af37b...))   
+$ git log
+commit d6af37b316d41930900d093d66f1de795c2ebe4e (HEAD)
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 15:03:58 2024 +0300
+
+    Version 2
+
+commit 11b13b0caf5ef4a5cd1ffece34b4286898d8db22
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 14:51:57 2024 +0300
+
+    Version 1
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest ((d6af37b...))   
+$ git log --all
+commit 4115af1116022e3320f1d1f2b3d51ef270e34033 (master)
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 15:05:14 2024 +0300
+
+    Version 3
+
+commit d6af37b316d41930900d093d66f1de795c2ebe4e (HEAD)
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 15:03:58 2024 +0300
+
+    Version 2
+
+commit 11b13b0caf5ef4a5cd1ffece34b4286898d8db22
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 14:51:57 2024 +0300
+
+    Version 1
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest ((d6af37b...))   
+$ git checkout 11b13b0caf5ef4a5cd1ffece34b4286898d8db22
+Previous HEAD position was d6af37b Version 2
+HEAD is now at 11b13b0 Version 1
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest ((11b13b0...))   
+$ git log -all
+error: switch `l' expects a numerical value
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest ((11b13b0...))   
+$ git log --all
+commit 4115af1116022e3320f1d1f2b3d51ef270e34033 (master)
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 15:05:14 2024 +0300
+
+    Version 3
+
+commit d6af37b316d41930900d093d66f1de795c2ebe4e
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 15:03:58 2024 +0300
+
+    Version 2
+
+commit 11b13b0caf5ef4a5cd1ffece34b4286898d8db22 (HEAD)
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 14:51:57 2024 +0300
+
+    Version 1
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest ((11b13b0...))   
+$ git add .
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest ((11b13b0...))   
+$ git commit -m "Version 1 Updated"
+[detached HEAD 71c82b7] Version 1 Updated
+ 1 file changed, 1 insertion(+)
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest ((71c82b7...))   
+$ git log --all
+commit 71c82b7a438dbdfb49bb97c6d5a20cadbca8239a (HEAD)
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 15:10:52 2024 +0300
+
+    Version 1 Updated
+
+commit 4115af1116022e3320f1d1f2b3d51ef270e34033 (master)
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 15:05:14 2024 +0300
+
+    Version 3
+
+commit d6af37b316d41930900d093d66f1de795c2ebe4e
+Author: Natnael.Y <studentethiopia21@gmail.com>
+Date:   Sun Mar 10 15:03:58 2024 +0300
+
+    Version 2
+
+commit 11b13b0caf5ef4a5cd1ffece34b4286898d8db22
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest ((71c82b7...))   
+$ git log --all --graph
+* commit 71c82b7a438dbdfb49bb97c6d5a20cadbca8239a (HEAD)
+| Author: Natnael.Y <studentethiopia21@gmail.com>
+| Date:   Sun Mar 10 15:10:52 2024 +0300
+|
+|     Version 1 Updated
+|
+| * commit 4115af1116022e3320f1d1f2b3d51ef270e34033 (master)
+| | Author: Natnael.Y <studentethiopia21@gmail.com>
+| | Date:   Sun Mar 10 15:05:14 2024 +0300
+| |
+| |     Version 3
+| |
+| * commit d6af37b316d41930900d093d66f1de795c2ebe4e
+|/  Author: Natnael.Y <studentethiopia21@gmail.com>
+|   Date:   Sun Mar 10 15:03:58 2024 +0300
+|
+|       Version 2
+|
+* commit 11b13b0caf5ef4a5cd1ffece34b4286898d8db22
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest ((71c82b7...))   
+$ git checkout master
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  71c82b7 Version 1 Updated
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 71c82b7
+
+Switched to branch 'master'
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git log --all --graph
+* commit 4115af1116022e3320f1d1f2b3d51ef270e34033 (HEAD -> master)
+| Author: Natnael.Y <studentethiopia21@gmail.com>
+| Date:   Sun Mar 10 15:05:14 2024 +0300
+|
+|     Version 3
+|
+* commit d6af37b316d41930900d093d66f1de795c2ebe4e
+| Author: Natnael.Y <studentethiopia21@gmail.com>
+| Date:   Sun Mar 10 15:03:58 2024 +0300
+|
+|     Version 2
+|
+* commit 11b13b0caf5ef4a5cd1ffece34b4286898d8db22
+  Author: Natnael.Y <studentethiopia21@gmail.com>
+  Date:   Sun Mar 10 14:51:57 2024 +0300
+
+      Version 1
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git checkout 11b13b0caf5ef4a5cd1ffece34b4286898d8db22 .
+Updated 1 path from 78980f5
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git log --all --graph
+* commit 4115af1116022e3320f1d1f2b3d51ef270e34033 (HEAD -> master)
+| Author: Natnael.Y <studentethiopia21@gmail.com>
+| Date:   Sun Mar 10 15:05:14 2024 +0300
+|
+|     Version 3
+|
+* commit d6af37b316d41930900d093d66f1de795c2ebe4e
+| Author: Natnael.Y <studentethiopia21@gmail.com>
+| Date:   Sun Mar 10 15:03:58 2024 +0300
+|
+|     Version 2
+|
+* commit 11b13b0caf5ef4a5cd1ffece34b4286898d8db22
+  Author: Natnael.Y <studentethiopia21@gmail.com>
+  Date:   Sun Mar 10 14:51:57 2024 +0300
+
+      Version 1
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   practice.js
+
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git commit -m "Version 1 Restored"
+[master 42b1596] Version 1 Restored
+ 1 file changed, 4 deletions(-)
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git log --all --graph
+* commit 42b159632ed1bada81fa3d70f92f0892f6488456 (HEAD -> master)
+| Author: Natnael.Y <studentethiopia21@gmail.com>
+| Date:   Sun Mar 10 15:17:11 2024 +0300
+|
+|     Version 1 Restored
+|
+* commit 4115af1116022e3320f1d1f2b3d51ef270e34033
+| Author: Natnael.Y <studentethiopia21@gmail.com>
+| Date:   Sun Mar 10 15:05:14 2024 +0300
+|
+|     Version 3
+|
+* commit d6af37b316d41930900d093d66f1de795c2ebe4e
+| Author: Natnael.Y <studentethiopia21@gmail.com>
+| Date:   Sun Mar 10 15:03:58 2024 +0300
+|
+|     Version 2
+| 
+* commit 11b13b0caf5ef4a5cd1ffece34b4286898d8db22
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git config --global alias.s "status"
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git s
+On branch master
+nothing to commit, working tree clean
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git config --global alias.cm "commit -m"
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git config --global alias.co "checkout"
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git s
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git add .
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$ git cm "Add git ignore"
+[master e183a4f] Add git ignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+Nati@LAPTOP-B89E68BP MINGW64 /d/Evangadi Networks/BashPractice/BashTest (master)
+$
+
+This are the codes written remember them.
